@@ -1,81 +1,89 @@
-$ninesixty-gutter-width: 20px !default
+# Config defaults
+$scalablegs-gutter-width: 2\% !default
 
-$ninesixty-grid-width: 960px !default
+$scalablegs-grid-min-width: 26em !default
 
-$ninesixty-columns: 12 !default
+$scalablegs-grid-max-width: 82em !default
+
+$scalablegs-grid-width: 100% !default
+
+$scalablegs-columns: 20 !default
+
 
 =grid-container
   margin-left: auto
   margin-right: auto
-  width: $ninesixty-grid-width
+  min-width: $scalablegs-grid-min-width
+  max-width: $scalablegs-grid-max-width
+  position: relative
 
-=grid-width($n, $cols: $ninesixty-columns, $gutter-width: $ninesixty-gutter-width)
-  width: $ninesixty-grid-width / $cols * $n - $gutter-width
+=grid-width($n, $cols: $scalablegs-columns, $gutter-width: $scalablegs-gutter-width)
+  width: $scalablegs-grid-width / $cols * $n - $gutter-width
 
-=grid-unit-base($gutter-width: $ninesixty-gutter-width)
+=grid-unit-base($gutter-width: $scalablegs-gutter-width)
   display: inline
   float: left
   margin:
     left: $gutter-width / 2
     right: $gutter-width / 2
 
-=grid($n, $cols: $ninesixty-columns, $gutter-width: $ninesixty-gutter-width)
+=grid($n, $cols: $scalablegs-columns, $gutter-width: $scalablegs-gutter-width)
   +grid-unit-base($gutter-width)
   +grid-width($n, $cols, $gutter-width)
 
-=alpha
+=grid-first
   margin-left: 0
 
-=omega
+=grid-last
   margin-right: 0
 
-=grids($cols: $ninesixty-columns, $gutter-width: $ninesixty-gutter-width)
+=grids($cols: $scalablegs-columns, $gutter-width: $scalablegs-gutter-width)
   #{enumerate(".grid", 1, $cols, "_")}
     +grid-unit-base
   @for $n from 1 through $cols
     .grid_#{$n}
       +grid-width($n, $cols, $gutter-width)
 
-=grid-prefix($n, $cols: $ninesixty-columns)
-  padding-left: $ninesixty-grid-width / $cols * $n
+=grid-prefix($n, $cols: $scalablegs-columns)
+  padding-left: $scalablegs-grid-width / $cols * $n
 
-=grid-prefixes($cols: $ninesixty-columns)
+=grid-prefixes($cols: $scalablegs-columns)
   @for $n from 1 through $cols - 1
     .prefix_#{$n}
       +grid-prefix($n, $cols)
 
-=grid-suffix($n, $cols: $ninesixty-columns)
-  padding-right: $ninesixty-grid-width / $cols * $n
+=grid-suffix($n, $cols: $scalablegs-columns)
+  padding-right: $scalablegs-grid-width / $cols * $n
 
-=grid-suffixes($cols: $ninesixty-columns)
+=grid-suffixes($cols: $scalablegs-columns)
   @for $n from 1 through $cols - 1
     .suffix_#{$n}
       +grid-suffix($n, $cols)
 
 =grid-children
-  .alpha
-    +alpha
-  .omega
-    +omega
+  .first
+    +first
+  .last
+    +last
 
 =grid-move-base
   position: relative
 
 =grid-move-push($n, $cols)
-  left: ($ninesixty-grid-width / $cols) * $n
+  left: ($scalablegs-grid-width / $cols) * $n
 
 =grid-move-pull($n, $cols)
-  left: -($ninesixty-grid-width / $cols) * $n
+  left: -($scalablegs-grid-width / $cols) * $n
 
-=grid-push($n, $cols: $ninesixty-columns)
+=grid-push($n, $cols: $scalablegs-columns)
   +grid-move-base
   +grid-move-push($n, $cols)
 
-=grid-pull($n, $cols: $ninesixty-columns)
+=grid-pull($n, $cols: $scalablegs-columns)
   +grid-move-base
   +grid-move-pull($n, $cols)
 
-=grid-movements($cols: $ninesixty-columns)
+=grid-movements($cols: $scalablegs-columns)
   #{enumerate(".push", 1, $cols, "_")},
   #{enumerate(".pull", 1, $cols, "_")}
     +grid-move-base
@@ -85,7 +93,7 @@ $ninesixty-columns: 12 !default
     .pull_#{$n}
       +grid-move-pull($n, $cols)
 
-=grid-system($cols: $ninesixty-columns)
+=grid-system($cols: $scalablegs-columns)
   +grid-container
   +grids($cols)
   +grid-prefixes($cols)

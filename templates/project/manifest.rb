@@ -1,5 +1,4 @@
 stylesheet 'grid.sass', :media => "screen, projection"
-stylesheet 'text.sass', :media => "screen, projection"
 
 description "The 960 Grid System."
 
