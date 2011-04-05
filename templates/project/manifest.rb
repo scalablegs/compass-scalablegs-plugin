@@ -1,17 +1,16 @@
-stylesheet 'grid.sass', :media => "screen, projection"
-stylesheet 'text.sass', :media => "screen, projection"
+stylesheet 'scalablegs.sass', :media => "screen, projection"
 
-description "The 960 Grid System."
+description "Scalable Grid System for cross device and screen size web development."
 
 help %Q{
-Please see the 960 website for documentation:
+Please see the Scalable.gs website for documentation:
 
-    http://960.gs/
+    http://scalable.gs/
 }
 
 welcome_message %Q{
-Please see the 960 website for documentation:
+Please see the Scalable.gs website for documentation:
 
-    http://960.gs/
+    http://scalable.gs/
 }
 
