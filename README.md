@@ -19,23 +19,23 @@ The plugin is build upon the great work done by [Christopher M. Eppstein and Mat
 ##Create a Scalablegs-based Compass Project
 
 
-    compass create -r scalablegs my_project --using scalablegs
+    compass create -r scalable my_project --using scalable
 
 Or, If you prefer to use Sass's indentation based syntax:
 
-    compass create -r scalablegs my_project --using scalablegs --syntax sass
+    compass create -r scalable my_project --using scalable --syntax sass
 
-Then edit your `scalablegs.sass` accordingly.
+Then edit your `scalable.sass` accordingly.
 
 # Customising your Grid System
 
 
 This plugin uses the following configuration variables:
 
-* `$scalablegs-columns` (default: 20) controls the default number of grid columns
-* `$scalablegs-grid-min-width` (default: 26em - with the assumption of a 12px body font size) controls the default minimum site width
-* `$scalablegs-grid-max-width` (default: 82em - with the assumption of a 12px body font size) controls the default maximum site width
-* `$scalablegs-gutter-width` (default: 2%) controls the default gutter width
+* `$scalable-columns` (default: 20) controls the default number of grid columns
+* `$scalable-grid-min-width` (default: 26em - with the assumption of a 12px body font size) controls the default minimum site width
+* `$scalable-grid-max-width` (default: 82em - with the assumption of a 12px body font size) controls the default maximum site width
+* `$scalable-gutter-width` (default: 2%) controls the default gutter width
 
 All of the mixins included with this plugin use these configuration variables
 as defaults if the corresponding argument is omitted from a mixin call.
@@ -67,7 +67,7 @@ To create a grid system using only CSS, use the following semantic grid mixins:
 
 Example:
 
-    $scalablegs-columns: 24
+    $scalable-columns: 24
 
     #wrap
       +grid-container

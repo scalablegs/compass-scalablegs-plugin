@@ -1,32 +1,32 @@
-$scalablegs-gutter-width: 2% !default
+$scalable-gutter-width: 2% !default
 
-$scalablegs-grid-min-width: 26em !default
+$scalable-grid-min-width: 26em !default
 
-$scalablegs-grid-max-width: 82em !default
+$scalable-grid-max-width: 82em !default
 
-$scalablegs-grid-width: 100% !default
+$scalable-grid-width: 100% !default
 
-$scalablegs-columns: 20 !default
+$scalable-columns: 20 !default
 
 
 =grid-scalable
   margin-left: auto
   margin-right: auto
-  min-width: $scalablegs-grid-min-width
-  max-width: $scalablegs-grid-max-width
+  min-width: $scalable-grid-min-width
+  max-width: $scalable-grid-max-width
   position: relative
 
-=grid-width($n, $cols: $scalablegs-columns, $gutter-width: $scalablegs-gutter-width)
-  width: $scalablegs-grid-width / $cols * $n - $gutter-width
+=grid-width($n, $cols: $scalable-columns, $gutter-width: $scalable-gutter-width)
+  width: $scalable-grid-width / $cols * $n - $gutter-width
 
-=grid-unit-base($gutter-width: $scalablegs-gutter-width)
+=grid-unit-base($gutter-width: $scalable-gutter-width)
   display: inline
   float: left
   margin:
     left: $gutter-width / 2
     right: $gutter-width / 2
 
-=grid($n, $cols: $scalablegs-columns, $gutter-width: $scalablegs-gutter-width)
+=grid($n, $cols: $scalable-columns, $gutter-width: $scalable-gutter-width)
   +grid-unit-base($gutter-width)
   +grid-width($n, $cols, $gutter-width)
 
@@ -36,7 +36,7 @@ $scalablegs-columns: 20 !default
 =grid-last
   margin-right: 0
 
-=grids($cols: $scalablegs-columns, $gutter-width: $scalablegs-gutter-width)
+=grids($cols: $scalable-columns, $gutter-width: $scalable-gutter-width)
   #{enumerate(".grid", 1, $cols, "_")}
     +grid-unit-base
   @for $n from 1 through $cols
@@ -53,20 +53,20 @@ $scalablegs-columns: 20 !default
   position: relative
 
 =grid-move-push($n, $cols)
-  left: ($scalablegs-grid-width / $cols) * $n
+  left: ($scalable-grid-width / $cols) * $n
 
 =grid-move-pull($n, $cols)
-  left: -($scalablegs-grid-width / $cols) * $n
+  left: -($scalable-grid-width / $cols) * $n
 
-=grid-push($n, $cols: $scalablegs-columns)
+=grid-push($n, $cols: $scalable-columns)
   +grid-move-base
   +grid-move-push($n, $cols)
 
-=grid-pull($n, $cols: $scalablegs-columns)
+=grid-pull($n, $cols: $scalable-columns)
   +grid-move-base
   +grid-move-pull($n, $cols)
 
-=grid-movements($cols: $scalablegs-columns)
+=grid-movements($cols: $scalable-columns)
   #{enumerate(".push", 1, $cols, "_")},
   #{enumerate(".pull", 1, $cols, "_")}
     +grid-move-base
@@ -76,7 +76,7 @@ $scalablegs-columns: 20 !default
     .pull_#{$n}
       +grid-move-pull($n, $cols)
 
-=grid-system($cols: $scalablegs-columns)
+=grid-system($cols: $scalable-columns)
   +grid-scalable
   +grids($cols)
   +grid-children

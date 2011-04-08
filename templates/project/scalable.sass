@@ -4,16 +4,21 @@
  * Licensed under GPL and MIT.
 
 
-@import scalablegs/grid
+@import scalable/grid
 
-// The following generates the default grids provided by the css version of 960.gs
-.scalablegs
+// The following generates the one of the default grids provided by the css version of scalable.gs
+.scalable
   +grid-system(20)
 
 
 // But most compass users prefer to construct semantic layouts like so (two column layout with header and footer):
 
-$scalablegs-columns: 20
+$scalable-grid-min-width: 26em
+$scalable-grid-max-width: 82em
+$scalable-columns: 20 
+$scalable-gutter-width: 2%
+
+
 
 .two-column
   +grid-scalable
