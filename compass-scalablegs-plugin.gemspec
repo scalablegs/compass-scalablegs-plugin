@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{compass-scalablegs-plugin}
-  s.version = "0.0.1"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.3.5")
   s.authors = ["Chris Eppstein", "Matt Sanders", "Kenneth Nordahl"]
@@ -23,5 +23,5 @@ Gem::Specification.new do |s|
   s.rubyforge_project = %q{compass-scalablegs-plugin}
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{Compass compatible Sass port of scalable.gs.}
-  s.add_dependency(%q<compass>, [">= 0.10.0"])
+  s.add_dependency(%q<compass>, [">= 0.10.6"])
 end

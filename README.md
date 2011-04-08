@@ -16,7 +16,7 @@ The plugin is build upon the great work done by [Christopher M. Eppstein and Mat
 
     gem install compass-scalablegs-plugin
 
-##Create a 960-based Compass Project
+##Create a Scalablegs-based Compass Project
 
 
     compass create -r scalablegs my_project --using scalablegs

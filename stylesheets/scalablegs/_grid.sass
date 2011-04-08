@@ -1,5 +1,4 @@
-# Config defaults
-$scalablegs-gutter-width: 2\% !default
+$scalablegs-gutter-width: 2% !default
 
 $scalablegs-grid-min-width: 26em !default
 
@@ -10,7 +9,7 @@ $scalablegs-grid-width: 100% !default
 $scalablegs-columns: 20 !default
 
 
-=grid-container
+=grid-scalable
   margin-left: auto
   margin-right: auto
   min-width: $scalablegs-grid-min-width
@@ -44,27 +43,11 @@ $scalablegs-columns: 20 !default
     .grid_#{$n}
       +grid-width($n, $cols, $gutter-width)
 
-=grid-prefix($n, $cols: $scalablegs-columns)
-  padding-left: $scalablegs-grid-width / $cols * $n
-
-=grid-prefixes($cols: $scalablegs-columns)
-  @for $n from 1 through $cols - 1
-    .prefix_#{$n}
-      +grid-prefix($n, $cols)
-
-=grid-suffix($n, $cols: $scalablegs-columns)
-  padding-right: $scalablegs-grid-width / $cols * $n
-
-=grid-suffixes($cols: $scalablegs-columns)
-  @for $n from 1 through $cols - 1
-    .suffix_#{$n}
-      +grid-suffix($n, $cols)
-
 =grid-children
   .first
-    +first
+    +grid-first
   .last
-    +last
+    +grid-last
 
 =grid-move-base
   position: relative
@@ -94,9 +77,7 @@ $scalablegs-columns: 20 !default
       +grid-move-pull($n, $cols)
 
 =grid-system($cols: $scalablegs-columns)
-  +grid-container
+  +grid-scalable
   +grids($cols)
-  +grid-prefixes($cols)
-  +grid-suffixes($cols)
   +grid-children
   +grid-movements($cols)
