@@ -72,12 +72,12 @@ Example:
     #wrap
       +grid-container
       #left-nav
-        +alpha
+        +first
         +grid(5)
       #main-content
         +grid-prefix(1)
         +grid(10)
-        +omega
+        +last
 
 # Authors/Contributors
 
