@@ -1,2 +1,2 @@
 require 'compass'
-Compass::Frameworks.register("scalable", :path => "#{File.dirname(__FILE__)}/..")
+Compass::Frameworks.register("scalablegs", :path => "#{File.dirname(__FILE__)}/..")

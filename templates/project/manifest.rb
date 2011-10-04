@@ -1,4 +1,4 @@
-stylesheet 'scalable.sass', :media => "screen, projection"
+stylesheet 'scalablegs.sass', :media => "screen, projection"
 
 description "Scalable Grid System for cross device and screen size web development."
 
